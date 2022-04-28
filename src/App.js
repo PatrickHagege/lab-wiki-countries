@@ -15,10 +15,7 @@ function App() {
         <div className="row">
           <CountriesList countries={countries} />
           <Routes>
-          <Route path=":alpha3Code" element={<CountryDetails countries={countries} />} />
-
-            {/* <Route path="/countries" element={<CountriesList countries={countries} />}></Route> */}
-            
+          <Route path="/:alpha3Code" element={<CountryDetails countries={countries} />} />
           </Routes>
         </div>
       </div>
