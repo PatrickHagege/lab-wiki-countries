@@ -14,8 +14,9 @@ function App() {
     axios
     .get('https://ih-countries-api.herokuapp.com/countries')
     .then(response => {
+      console.log('RESPONSE.DATA IN APP.JS :', response.data)
+      response.data.sort((a, b) => (a.name.common > b.name.common) ? 1 : -1)
       setAPICountries(response.data)
-      // console.table('APICountries', APICountries);
     })
     .catch(error => {
       console.log(error);
@@ -23,6 +24,7 @@ function App() {
     // eslint-disable-next-line
   }, [])
 
+  // console.table('APICountries', APICountries);
   return (
     <div className="App">
       <Navbar />
